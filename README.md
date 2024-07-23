@@ -1,30 +1,52 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# React Data Visualization Project
+This project is a data visualization application built with React using Vite, TailwindCSS, Recharts, and shadcn. The application consumes a given `.json` file containing dummy results for an advertising campaign and builds a data visualization. It displays the data through charts and provides three Key Performance Indicators (KPIs):
+- The campaign with the most impressions
+- The campaign with the most clicks
+- The date with the highest amount of combined activity (clicks and impressions)
 
-Currently, two official plugins are available:
+## Features
+- Intuitive data visualization using charts
+- Clear labels for campaign names and dates
+- Display of three KPIs
+- Responsive design with TailwindCSS
+- Modern component library with shadcn
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
 
-## Expanding the ESLint configuration
+### Prerequisites
+- Node.js (>= 12.x)
+- npm (>= 6.x) or yarn (>= 1.22.x)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Steps
 
-- Configure the top-level `parserOptions` property like this:
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/SohamNagi/ReactDataVis.git
+   cd ReactDataVis
+   ```
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+2. **Install Dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+3. **Run the Development Server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+## Usage
+- Open `http://localhost:5173` or the portname mention in the terminal to see the data visualization and KPIs.
+- You can also access it on the web at www.youtube.com
+
+## Technologies Used
+- **React**: A JavaScript library for building user interfaces
+- **Vite**: A fast build tool and development server
+- **TailwindCSS**: A utility-first CSS framework
+- **Recharts**: A composable charting library built on React components
+- **shadcn**: A modern component library for React used for boilerplate
