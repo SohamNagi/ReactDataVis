@@ -1,55 +1,59 @@
 import { Separator } from "./ui/separator";
+import { ModeToggle } from "./mode-toggle";
 
 const Footer = () => {
   return (
     <>
       <Separator></Separator>
-      <div className=" mx-2 p-2 grid grid-cols-10 ">
-        <div className="col-start-1 items-center col-span-3">
-          <p className=" text-sm">
-            This project visualises advertising campaign data using{" "}
-            <a href="https://vitejs.dev/" className="text-blue-400">
-              Vite
+      <div className=" mx-2 p-2 w-screen h-auto grid grid-cols-10 ">
+        <div className="col-start-0 col-span-6">
+          <p className="text-base sm:text-s">
+            Made by Soham Nagi
+            <a
+              href="https://vitejs.dev/"
+              className="text-blue-400 hidden lg:inline"
+            >
+              {" "}
+              using Vite,{" "}
             </a>
-            ,{" "}
-            <a href="https://reactjs.org/" className="text-blue-400">
-              React
+            <a
+              href="https://reactjs.org/"
+              className="text-blue-400 hidden lg:inline"
+            >
+              React,{" "}
             </a>
-            ,{" "}
-            <a href="https://tailwindcss.com/" className="text-blue-400">
-              TailwindCSS
+            <a
+              href="https://tailwindcss.com/"
+              className="text-blue-400 hidden lg:inline"
+            >
+              TailwindCSS,{" "}
             </a>
-            ,{" "}
-            <a href="https://recharts.org/" className="text-blue-400">
-              Recharts
+            <a
+              href="https://recharts.org/"
+              className="text-blue-400 hidden lg:inline"
+            >
+              Recharts,{" "}
             </a>
-            , and{" "}
-            <a href="https://ui.shadcn.com/" className="text-blue-400">
-              shadcn
+            <a
+              href="https://ui.shadcn.com/"
+              className="text-blue-400 hidden lg:inline"
+            >
+              shadcn.
             </a>
-            . It provides insightful visualizations to help analyze campaign
-            performance, including several key metrics such as impressions and
-            clicks.
           </p>
         </div>
-        <div className="col-end-13 flex-col col-span-2">
-          <img
-            className="h-12 w-12 rounded-full object-cover"
-            src={
-              "https://media.licdn.com/dms/image/D5603AQGm58eD6354Mg/profile-displayphoto-shrink_400_400/0/1680819421625?e=1727308800&v=beta&t=y1bWmZUi-vPc3HeDdxo1HR9bBcLu0LkcX30STtSHX30"
-            }
-            alt={`Team Member Profile of ${name}`}
-          />
+        <div className="col-start-11 flex-col col-span-2">
           <div className="flex justify-center pt-1 flex-row">
+            <ModeToggle></ModeToggle>
             <a href={"https://www.linkedin.com/in/sohamnagi"} className="">
               <div className="flex items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-3 w-3 text-blue-600 hover:text-blue-800"
+                  className="h-4 w-4 text-blue-600 hover:text-blue-800"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
-                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-4v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-4v-5.604c0-3.368-4-3.113-4 0v5.604h-4v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                 </svg>
               </div>
             </a>
@@ -59,7 +63,7 @@ const Footer = () => {
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-3 w-3"
+                className="h-4 w-4"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
@@ -73,7 +77,7 @@ const Footer = () => {
               <svg
                 fill="currentcolor"
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-3 w-3"
+                className="h-4 w-4"
                 version="1.1"
                 id="Capa_1"
                 viewBox="0 0 75.294 75.294"
