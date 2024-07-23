@@ -20,14 +20,14 @@ export function ModeToggle() {
   };
 
   return (
-    <Button variant="ghost" size="ic" onClick={handleToggle}>
+    <Button variant="ic" size="ic" className="pr-2" onClick={handleToggle}>
       <Sun
-        className={`absolute h-4 w-4 transition-all ${
+        className={` absolute hover:bg-accent rounded-full hover:text-accent-foreground h-4 w-4 transition-all ${
           isDarkMode ? "rotate-90 scale-0" : "rotate-0 scale-100"
         }`}
       />
       <Moon
-        className={`absolute h-4 w-4] transition-all ${
+        className={` absolute hover:bg-accent rounded-full hover:text-accent-foreground h-4 w-4 transition-all ${
           isDarkMode ? "rotate-0 scale-100" : "-rotate-90 scale-0"
         }`}
       />
