@@ -45,7 +45,7 @@ const KPI = (entries: KPIProps) => {
       dateActivityMap[entry.date] = combinedActivity;
     }
 
-    if (entry.campaign === "Campaign A") {
+    if (entry.campaign === "CampaignA") {
       a_imps += entry.impressions;
       a_clicks += entry.clicks;
     } else {
@@ -62,7 +62,7 @@ const KPI = (entries: KPIProps) => {
   }
 
   if (a_clicks > b_clicks) {
-    clickCamp = "Campagin A";
+    clickCamp = "Campaign A";
     highestClicks = a_clicks;
   } else {
     clickCamp = "Campaign B";
@@ -70,7 +70,7 @@ const KPI = (entries: KPIProps) => {
   }
 
   if (a_imps > b_imps) {
-    impCamp = "Campagin A";
+    impCamp = "Campaign A";
     highestClicks = a_imps;
   } else {
     impCamp = "Campaign B";
@@ -79,15 +79,15 @@ const KPI = (entries: KPIProps) => {
 
   return (
     <div>
-      <div className="grid text-center grid-cols-3">
+      <div className="grid text-center px-5 grid-cols-3">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm   font-extrabold">
+            <CardTitle className="text-sm font-extrabold">
               Most Clicks
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl">{clickCamp}</div>
+            <div className=" md:text-2xl">{clickCamp}</div>
             <p className="text-xs text-muted-foreground">
               {highestClicks} Clicks
             </p>
@@ -98,7 +98,7 @@ const KPI = (entries: KPIProps) => {
             <CardTitle className="text-sm font-extrabold">Best Day</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl">{bestDay}</div>
+            <div className="md:text-2xl">{bestDay}</div>
             <p className="text-xs text-muted-foreground">
               {highestActivity} Interactions
             </p>
@@ -111,7 +111,7 @@ const KPI = (entries: KPIProps) => {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl ">{impCamp}</div>
+            <div className="md:text-2xl ">{impCamp}</div>
             <p className="text-xs text-muted-foreground">
               {highestImps} Impressions
             </p>

@@ -11,158 +11,22 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 
-const chartData = [
-  {
-    date: "2023-06-30",
-    CampaignA: 7314,
-    CampaignB: 6988,
-  },
-  {
-    date: "2023-07-01",
-    CampaignA: 2409,
-    CampaignB: 9253,
-  },
-  {
-    date: "2023-07-02",
-    CampaignA: 2525,
-    CampaignB: 8940,
-  },
-  {
-    date: "2023-07-03",
-    CampaignA: 4687,
-    CampaignB: 9657,
-  },
-  {
-    date: "2023-07-04",
-    CampaignA: 7092,
-    CampaignB: 3223,
-  },
-  {
-    date: "2023-07-05",
-    CampaignA: 4363,
-    CampaignB: 422,
-  },
-  {
-    date: "2023-07-06",
-    CampaignA: 8599,
-    CampaignB: 8100,
-  },
-  {
-    date: "2023-07-07",
-    CampaignA: 5451,
-    CampaignB: 9745,
-  },
-  {
-    date: "2023-07-08",
-    CampaignA: 5017,
-    CampaignB: 9044,
-  },
-  {
-    date: "2023-07-09",
-    CampaignA: 5500,
-    CampaignB: 6059,
-  },
-  {
-    date: "2023-07-10",
-    CampaignA: 1124,
-    CampaignB: 9904,
-  },
-  {
-    date: "2023-07-11",
-    CampaignA: 2352,
-    CampaignB: 3770,
-  },
-  {
-    date: "2023-07-12",
-    CampaignA: 8453,
-    CampaignB: 4118,
-  },
-  {
-    date: "2023-07-13",
-    CampaignA: 2162,
-    CampaignB: 9591,
-  },
-  {
-    date: "2023-07-14",
-    CampaignA: 1804,
-    CampaignB: 8022,
-  },
-  {
-    date: "2023-07-15",
-    CampaignA: 5017,
-    CampaignB: 3991,
-  },
-  {
-    date: "2023-07-16",
-    CampaignA: 4465,
-    CampaignB: 385,
-  },
-  {
-    date: "2023-07-17",
-    CampaignA: 6941,
-    CampaignB: 641,
-  },
-  {
-    date: "2023-07-18",
-    CampaignA: 7912,
-    CampaignB: 6776,
-  },
-  {
-    date: "2023-07-19",
-    CampaignA: 6435,
-    CampaignB: 8946,
-  },
-  {
-    date: "2023-07-20",
-    CampaignA: 6586,
-    CampaignB: 2632,
-  },
-  {
-    date: "2023-07-21",
-    CampaignA: 8625,
-    CampaignB: 1109,
-  },
-  {
-    date: "2023-07-22",
-    CampaignA: 8708,
-    CampaignB: 2939,
-  },
-  {
-    date: "2023-07-23",
-    CampaignA: 546,
-    CampaignB: 7256,
-  },
-  {
-    date: "2023-07-24",
-    CampaignA: 9719,
-    CampaignB: 8888,
-  },
-  {
-    date: "2023-07-25",
-    CampaignA: 4591,
-    CampaignB: 1476,
-  },
-  {
-    date: "2023-07-26",
-    CampaignA: 1910,
-    CampaignB: 8480,
-  },
-  {
-    date: "2023-07-27",
-    CampaignA: 9271,
-    CampaignB: 6743,
-  },
-  {
-    date: "2023-07-28",
-    CampaignA: 5442,
-    CampaignB: 3784,
-  },
-  {
-    date: "2023-07-29",
-    CampaignA: 391,
-    CampaignB: 2336,
-  },
-];
+interface Entry {
+  date: string;
+  campaign: string;
+  impressions: number;
+  clicks: number;
+}
+
+interface ImpProps {
+  entries: Entry[];
+}
+
+interface CombinedData {
+  date: string;
+  "CampaignA": number;
+  "CampaignB": number;
+}
 
 const chartConfig = {
   views: {
@@ -178,7 +42,25 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-export function Impressions(data) {
+export function Impressions(entries: ImpProps) {
+  const chartData: CombinedData[] = entries.entries.reduce((acc: CombinedData[], curr: Entry) => {
+    const existing = acc.find(entry => entry.date === curr.date);
+    if (existing) {
+      if (curr.campaign === "CampaignA") {
+        existing.CampaignA = curr.impressions;
+      } else if (curr.campaign === "CampaignB") {
+        existing.CampaignB = curr.impressions;
+      }
+    } else {
+      acc.push({
+        date: curr.date,
+        CampaignA: curr.campaign === "CampaignA" ? curr.impressions : undefined,
+        CampaignB: curr.campaign === "CampaignB" ? curr.impressions : undefined
+      });
+    }
+    return acc;
+  }, []);
+
   const [activeChart, setActiveChart] =
     React.useState<keyof typeof chartConfig>("CampaignA");
 
@@ -187,7 +69,7 @@ export function Impressions(data) {
       CampaignA: chartData.reduce((acc, curr) => acc + curr.CampaignA, 0),
       CampaignB: chartData.reduce((acc, curr) => acc + curr.CampaignB, 0),
     }),
-    []
+    [chartData]
   );
 
   return (

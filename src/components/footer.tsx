@@ -3,44 +3,11 @@ import { ModeToggle } from "./mode-toggle";
 
 const Footer = () => {
   return (
-    <div className="h-15">
+    <div className="">
       <Separator></Separator>
-      <div className=" mx-5 p-5 w-screen grid grid-cols-10 ">
+      <div className="px-2 py-1 w-screen grid grid-cols-10 ">
         <div className="col-start-0 col-span-6">
-          <p className="text-base sm:text-s">
-            Made by Soham Nagi
-            <a
-              href="https://vitejs.dev/"
-              className="text-blue-400 hidden lg:inline"
-            >
-              {" "}
-              using Vite,{" "}
-            </a>
-            <a
-              href="https://reactjs.org/"
-              className="text-blue-400 hidden lg:inline"
-            >
-              React,{" "}
-            </a>
-            <a
-              href="https://tailwindcss.com/"
-              className="text-blue-400 hidden lg:inline"
-            >
-              TailwindCSS,{" "}
-            </a>
-            <a
-              href="https://recharts.org/"
-              className="text-blue-400 hidden lg:inline"
-            >
-              Recharts,{" "}
-            </a>
-            <a
-              href="https://ui.shadcn.com/"
-              className="text-blue-400 hidden lg:inline"
-            >
-              shadcn.
-            </a>
-          </p>
+          <p className="text-base sm:text-s">Made by Soham Nagi </p>
         </div>
         <div className="col-start-11 flex-col col-span-2">
           <div className="flex justify-center pt-1 flex-row">

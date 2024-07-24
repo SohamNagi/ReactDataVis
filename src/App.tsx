@@ -18,12 +18,12 @@ function App() {
   const d: Entry[] = jsonData;
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <div className="flex flex-col items-center justify-between h-screen">
+      <div className="flex flex-col m-0 p-0 overflow-x-hidden items-center justify-between w-screen h-screen">
         <Header></Header>
-        <div className="flex gap-2 flex-col">
-          <div className="grid gap-2 grid-cols-2">
-            <Impressions></Impressions>
-            <Clicks></Clicks>
+        <div className="flex gap-2 py-1 flex-col">
+          <div className="grid gap-2 px-5 md:grid-cols-2">
+            <Impressions entries={d}></Impressions>
+            <Clicks entries={d}></Clicks>
           </div>
           <KPI entries={d}></KPI>
         </div>

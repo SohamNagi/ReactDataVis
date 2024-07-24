@@ -20,7 +20,7 @@ export function ModeToggle() {
   };
 
   return (
-    <Button variant="ic" size="ic" className="pr-2" onClick={handleToggle}>
+    <Button variant="ic" size="ic" className="pr-2 hidden md:flex" onClick={handleToggle}>
       <Sun
         className={` absolute hover:bg-accent rounded-full hover:text-accent-foreground h-4 w-4 transition-all ${
           isDarkMode ? "rotate-90 scale-0" : "rotate-0 scale-100"
