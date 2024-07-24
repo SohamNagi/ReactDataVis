@@ -5,9 +5,17 @@ import Header from "./components/header";
 import Impressions from "./components/impressions";
 import Clicks from "./components/clicks";
 import KPI from "./components/kpi";
-import cdata from "./mock_campaign_results.json";
+import jsonData from "./mock_campaign_results.json";
+
+interface Entry {
+  date: string;
+  campaign: string;
+  impressions: number;
+  clicks: number;
+}
 
 function App() {
+  const d: Entry[] = jsonData;
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <div className="flex flex-col items-center justify-between h-screen">
@@ -17,7 +25,7 @@ function App() {
             <Impressions></Impressions>
             <Clicks></Clicks>
           </div>
-          <KPI></KPI>
+          <KPI entries={d}></KPI>
         </div>
         <Footer></Footer>
       </div>
