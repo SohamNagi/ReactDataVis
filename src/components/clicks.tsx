@@ -28,7 +28,7 @@ interface CombinedData {
 
 const chartConfig = {
   views: {
-    label: "Impressions",
+    label: "Clicks",
   },
   CampaignA: {
     label: "Campaign A",

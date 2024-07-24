@@ -61,6 +61,32 @@ const KPI = (entries: KPIProps) => {
     }
   }
 
+  const bestdate = new Date(bestDay);
+
+  // Array of month names
+  const monthNames = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  // Extract the parts
+  const year = bestdate.getFullYear();
+  const month = monthNames[bestdate.getMonth()]; // Get the month name from the array
+  const day = bestdate.getDate();
+
+  // Format the date
+  const formattedDate = `${day} ${month}, ${year}`;
+
   if (a_clicks > b_clicks) {
     clickCamp = "Campaign A";
     highestClicks = a_clicks;
@@ -98,7 +124,7 @@ const KPI = (entries: KPIProps) => {
             <CardTitle className="text-sm font-extrabold">Best Day</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="md:text-2xl">{bestDay}</div>
+            <div className="md:text-2xl">{formattedDate}</div>
             <p className="text-xs text-muted-foreground">
               {highestActivity} Interactions
             </p>
@@ -111,7 +137,9 @@ const KPI = (entries: KPIProps) => {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="md:text-2xl ">{impCamp}</div>
+            <div className="md:text-2xl ">
+              {impCamp}
+            </div>
             <p className="text-xs text-muted-foreground">
               {highestImps} Impressions
             </p>
