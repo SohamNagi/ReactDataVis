@@ -167,11 +167,11 @@ const chartConfig = {
     label: "Impressions",
   },
   CampaignA: {
-    label: "Campaign A",
+    label: "Camp A",
     color: "hsl(var(--chart-1))",
   },
   CampaignB: {
-    label: "Campaign B",
+    label: "Camp B",
     color: "hsl(var(--chart-2))",
   },
 } satisfies ChartConfig;

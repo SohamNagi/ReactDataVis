@@ -3,9 +3,9 @@ import { ModeToggle } from "./mode-toggle";
 
 const Footer = () => {
   return (
-    <>
+    <div className="h-15">
       <Separator></Separator>
-      <div className=" mx-2 p-2 w-screen h-auto grid grid-cols-10 ">
+      <div className=" mx-2 p-2 w-screen grid grid-cols-10 ">
         <div className="col-start-0 col-span-6">
           <p className="text-base sm:text-s">
             Made by Soham Nagi
@@ -100,7 +100,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
