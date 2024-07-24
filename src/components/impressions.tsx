@@ -1,12 +1,9 @@
+/* tslint:disable */
+
 import * as React from "react";
 import { CartesianGrid, Line, LineChart, XAxis } from "recharts";
 
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   ChartConfig,
   ChartContainer,
@@ -181,7 +178,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-export function Impressions() {
+export function Impressions(data) {
   const [activeChart, setActiveChart] =
     React.useState<keyof typeof chartConfig>("CampaignA");
 

@@ -8,7 +8,6 @@ import KPI from "./components/kpi";
 import cdata from "./mock_campaign_results.json";
 
 function App() {
-  console.log(cdata);
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <div className="flex flex-col items-center justify-between h-screen">
