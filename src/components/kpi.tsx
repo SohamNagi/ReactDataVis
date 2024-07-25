@@ -108,12 +108,12 @@ const KPI = (entries: KPIProps) => {
       <div className="grid text-center px-5 grid-cols-3">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-extrabold">
+            <CardTitle className="sm: text-[8px] text-sm font-bold">
               Most Clicks
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className=" md:text-2xl">{clickCamp}</div>
+            <div className="sm:text-[10px] md:text-2xl">{clickCamp}</div>
             <p className="text-xs text-muted-foreground">
               {highestClicks} Clicks
             </p>
@@ -121,25 +121,25 @@ const KPI = (entries: KPIProps) => {
         </Card>
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-extrabold">Best Day</CardTitle>
+            <CardTitle className="">
+              Best Day
+            </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="md:text-2xl">{formattedDate}</div>
-            <p className="text-xs text-muted-foreground">
+            <div className="sm:text-[8px] md:text-2xl">{formattedDate}</div>
+            <p className="text-xs text-muted-foreground ">
               {highestActivity} Interactions
             </p>
           </CardContent>
         </Card>
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-extrabold">
+            <CardTitle className="sm: text-[8px] text-sm font-bold">
               Most Impressions
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="md:text-2xl ">
-              {impCamp}
-            </div>
+            <div className="sm:text-[10px] md:text-2xl ">{impCamp}</div>
             <p className="text-xs text-muted-foreground">
               {highestImps} Impressions
             </p>
