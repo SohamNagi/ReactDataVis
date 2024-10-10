@@ -42,7 +42,7 @@ This project is a data visualization application built with React using Vite, Ta
 
 ## Usage
 - Open `http://localhost:5173` or the portname mention in the terminal to see the data visualization and KPIs.
-- You can also access it on the web at www.reactdatavisual.vercel.app
+- You can also access it on the web at [www.reactdatavisual.vercel.app](https://reactdatavisual.vercel.app/)
 
 ## Technologies Used
 - **React**: A JavaScript library for building user interfaces
